@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>3d-geometry-solver</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📐</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Spectral:wght@500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body data-theme="default">
+
+<header class="topbar" id="topbar">
+  <div class="topbar-right" id="topbar-right">
+
+    <img src="img/title.png" alt="3D Solid Geometry" class="title-img"
+         onerror="this.style.display='none'">
+
+    <div class="nav-dropdown" id="nav-dropdown">
+      <button class="dd-toggle" id="dd-toggle" type="button">
+        <span id="dd-toggle-label">الأقسام</span>
+        <span class="dd-caret">▾</span>
+      </button>
+      <div class="dropdown-panel" id="dropdown-panel"><!-- app.js --></div>
+    </div>
+
+    <button class="lang-btn" id="lang-btn" type="button" aria-label="Language">En</button>
+    <button class="color-btn" id="color-btn" type="button" aria-label="Theme">
+      <span class="color-dot" id="color-dot"></span>
+    </button>
+    <button class="bar-color-btn" id="bar-color-btn" type="button" aria-label="Bar and window color">
+      <span class="bar-color-dot" id="bar-color-dot"></span>
+    </button>
+
+    <div class="topbar-actions">
+      <button class="ghost-btn" id="help-btn"  type="button">مساعدة</button>
+      <button class="ghost-btn" id="rules-btn" type="button">القوانين</button>
+    </div>
+  </div>
+
+  <div class="color-palette" id="color-palette" hidden></div>
+  <div class="bar-color-palette" id="bar-color-palette" hidden></div>
+</header>
+
+<div class="layout">
+  <main id="content" class="content draggable-panel">
+    <div class="panel-bar" id="panel-bar" title="اسحب من هنا">
+      <span class="drag-dots">⋮⋮</span>
+      <span class="panel-bar-title" id="panel-bar-title"></span>
+    </div>
+    <div class="panel-body" id="content-body"><!-- app.js --></div>
+  </main>
+</div>
+
+<!-- HELP MODAL -->
+<div class="modal-overlay" id="help-overlay">
+  <div class="modal help-modal">
+    <button class="modal-close" id="help-close" type="button" aria-label="close">×</button>
+    <div id="help-body"></div>
+  </div>
+</div>
+
+<!-- RULES MODAL -->
+<div class="modal-overlay" id="rules-overlay">
+  <div class="modal rules-modal">
+    <button class="modal-close" id="rules-close" type="button" aria-label="close">×</button>
+    <div class="rules-box" id="rules-body"></div>
+  </div>
+</div>
+
+<!-- FLOATING PANEL (rule mode) -->
+<div class="floating-panel" id="floating-panel" hidden>
+  <div class="floating-panel-bar" id="floating-panel-bar">
+    <span class="floating-panel-title" id="floating-panel-title"></span>
+    <button class="floating-panel-close" id="floating-panel-close"
+            type="button" aria-label="close">×</button>
+  </div>
+  <div class="floating-panel-body" id="floating-panel-body"></div>
+</div>
+
+<footer class="footer">Powered by <em>Bisto</em></footer>
+
+
+<script src="geometry.js"></script>
+<script src="solver.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
